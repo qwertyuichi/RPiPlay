@@ -112,7 +112,7 @@ video_renderer_t *video_renderer_gstreamer_init(logger_t *logger, video_renderer
     }
 
     // Finish the pipeline
-    g_string_append(launch, "autovideosink name=video_sink sync=false");
+    g_string_append(launch, "nv3dsink name=video_sink sync=false");
 
     renderer->pipeline = gst_parse_launch(launch->str, &error);
     g_assert(renderer->pipeline);
